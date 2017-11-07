@@ -54,6 +54,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="RptServProfessional.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RptServProfessional.Designer.cs">
+      <DependentUpon>RptServProfessional.cs</DependentUpon>
+    </Compile>
     <Compile Include="RptInsAppointment.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -353,12 +359,6 @@
     <Compile Include="RptServNote.Designer.cs">
       <DependentUpon>RptServNote.cs</DependentUpon>
     </Compile>
-    <Compile Include="RptServProfessional.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="RptServProfessional.Designer.cs">
-      <DependentUpon>RptServProfessional.cs</DependentUpon>
-    </Compile>
     <Compile Include="RptTicket.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -441,6 +441,9 @@
     <Content Include="images\logo_web.png" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="RptServProfessional.resx">
+      <DependentUpon>RptServProfessional.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="RptInsAppointment.resx">
       <DependentUpon>RptInsAppointment.cs</DependentUpon>
     </EmbeddedResource>
@@ -588,9 +591,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="RptServNote.resx">
       <DependentUpon>RptServNote.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="RptServProfessional.resx">
-      <DependentUpon>RptServProfessional.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RptTicket.resx">
       <DependentUpon>RptTicket.cs</DependentUpon>

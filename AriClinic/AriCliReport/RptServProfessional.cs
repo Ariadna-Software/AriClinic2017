@@ -41,7 +41,8 @@ using AriCliModel;
             if (idProfesional.Equals("0"))
             {
                 this.DataSource = CntAriCli.GetTickets(fromDate, toDate, ctx1);
-                iniChart(ctx1);
+                this.reportHeaderSection1.Visible = false;
+                // iniChart(ctx1);
             }
             else
             {
