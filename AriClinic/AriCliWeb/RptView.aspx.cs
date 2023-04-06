@@ -1,6 +1,7 @@
 using System;
 using System.Linq;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Web.UI.WebControls;
 using AriCliModel;
 using AriCliReport;
@@ -24,10 +25,15 @@ public partial class RptView : System.Web.UI.Page
     PrescriptionGlasses prescriptionGlasses = null;
     string report = "";
     Permission per = null;
+    string connStr = "";
+    string provName = "";
 
     #region Init Load Unload events
     protected void Page_Init(object sender, EventArgs e)
     {
+        var ctysr = ConfigurationManager.ConnectionStrings["AriClinicContext"];
+        connStr = ctysr.ConnectionString;
+        provName = ctysr.ProviderName;
         ctx = new AriClinicContext("AriClinicContext");
         // security control, it must be a user logged
         if (Session["User"] == null)
@@ -241,6 +247,7 @@ public partial class RptView : System.Web.UI.Page
                     case "rptpatientbysource":
                         this.Title = "Pacientes por procedencia";
                         RptPatientBySource rptpbs = new RptPatientBySource();
+                        //rptpbs.sqlSources.ConnectionString = connStr;
                         ReportViewer1.Report = rptpbs;
                         break;
                     case "rptvisitbyreason":

@@ -18,7 +18,6 @@ namespace AriCliReport
             // Required for telerik Reporting designer support
             //
             InitializeComponent();
-
             //
             // TODO: Add any constructor code after InitializeComponent call
             //

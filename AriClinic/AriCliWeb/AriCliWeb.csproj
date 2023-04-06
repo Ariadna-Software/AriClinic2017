@@ -56,6 +56,7 @@
     <Reference Include="System.Web.Extensions" />
     <Reference Include="Telerik.OpenAccess, Version=2013.3.1211.3, Culture=neutral, PublicKeyToken=7ce17eeaf1d59342">
       <HintPath>C:\Program Files (x86)\Telerik\OpenAccess ORM\bin\Telerik.OpenAccess.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="Telerik.OpenAccess.35.Extensions, Version=2013.3.1211.3, Culture=neutral, PublicKeyToken=7ce17eeaf1d59342">
       <HintPath>C:\Program Files (x86)\Telerik\OpenAccess ORM\bin\Telerik.OpenAccess.35.Extensions.dll</HintPath>
@@ -68,9 +69,11 @@
     </Reference>
     <Reference Include="Telerik.Reporting, Version=7.2.13.1016, Culture=neutral, PublicKeyToken=a9d7983dfcc261be">
       <SpecificVersion>True</SpecificVersion>
+      <Private>True</Private>
     </Reference>
     <Reference Include="Telerik.ReportViewer.WebForms, Version=7.2.13.1016, Culture=neutral, PublicKeyToken=a9d7983dfcc261be">
       <SpecificVersion>True</SpecificVersion>
+      <Private>True</Private>
     </Reference>
     <Reference Include="Telerik.Web.UI">
       <HintPath>..\lib\RCAJAX\2013.3.1114.40\Telerik.Web.UI.dll</HintPath>
@@ -1543,6 +1546,7 @@
     <Content Include="web.config">
       <SubType>Designer</SubType>
     </Content>
+    <None Include="Properties\PublishProfiles\AriClinic.pubxml" />
     <None Include="Properties\PublishProfiles\AriClinic2013.pubxml" />
     <None Include="Properties\PublishProfiles\AriClinicW8.pubxml" />
     <Content Include="Service References\ServiceSMS\index.wsdl" />

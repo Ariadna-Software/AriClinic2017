@@ -10,10 +10,12 @@ namespace AriCliReport
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RptPatientBySource));
+            Telerik.Reporting.Group group1 = new Telerik.Reporting.Group();
             Telerik.Reporting.ReportParameter reportParameter1 = new Telerik.Reporting.ReportParameter();
             Telerik.Reporting.ReportParameter reportParameter2 = new Telerik.Reporting.ReportParameter();
             Telerik.Reporting.ReportParameter reportParameter3 = new Telerik.Reporting.ReportParameter();
             Telerik.Reporting.Drawing.StyleRule styleRule1 = new Telerik.Reporting.Drawing.StyleRule();
+            this.sqlSources = new Telerik.Reporting.SqlDataSource();
             this.pageHeaderSection1 = new Telerik.Reporting.PageHeaderSection();
             this.textBox1 = new Telerik.Reporting.TextBox();
             this.pictureBox1 = new Telerik.Reporting.PictureBox();
@@ -21,6 +23,9 @@ namespace AriCliReport
             this.textBox6 = new Telerik.Reporting.TextBox();
             this.textBox2 = new Telerik.Reporting.TextBox();
             this.textBox3 = new Telerik.Reporting.TextBox();
+            this.textBox14 = new Telerik.Reporting.TextBox();
+            this.textBox13 = new Telerik.Reporting.TextBox();
+            this.textBox17 = new Telerik.Reporting.TextBox();
             this.detail = new Telerik.Reporting.DetailSection();
             this.textBox18 = new Telerik.Reporting.TextBox();
             this.textBox19 = new Telerik.Reporting.TextBox();
@@ -32,18 +37,19 @@ namespace AriCliReport
             this.textBox21 = new Telerik.Reporting.TextBox();
             this.currentTimeTextBox = new Telerik.Reporting.TextBox();
             this.sqlPatientSource = new Telerik.Reporting.SqlDataSource();
-            this.source = new Telerik.Reporting.Group();
             this.groupFooterSection1 = new Telerik.Reporting.GroupFooterSection();
             this.groupHeaderSection1 = new Telerik.Reporting.GroupHeaderSection();
             this.textBox10 = new Telerik.Reporting.TextBox();
             this.textBox9 = new Telerik.Reporting.TextBox();
             this.comercial_nameDataTextBox = new Telerik.Reporting.TextBox();
             this.textBox7 = new Telerik.Reporting.TextBox();
-            this.sqlSources = new Telerik.Reporting.SqlDataSource();
-            this.textBox14 = new Telerik.Reporting.TextBox();
-            this.textBox13 = new Telerik.Reporting.TextBox();
-            this.textBox17 = new Telerik.Reporting.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
+            // 
+            // sqlSources
+            // 
+            this.sqlSources.ConnectionString = "AriClinicContext";
+            this.sqlSources.Name = "sqlSources";
+            this.sqlSources.SelectCommand = "SELECT        source_id, nme\r\nFROM            source";
             // 
             // pageHeaderSection1
             // 
@@ -119,6 +125,39 @@ namespace AriCliReport
             this.textBox3.Style.Color = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(128)))));
             this.textBox3.Style.TextAlign = Telerik.Reporting.Drawing.HorizontalAlign.Center;
             this.textBox3.Value = "Fecha apertura";
+            // 
+            // textBox14
+            // 
+            this.textBox14.Format = "{0:dd/MM/yyyy}";
+            this.textBox14.Location = new Telerik.Reporting.Drawing.PointU(Telerik.Reporting.Drawing.Unit.Inch(5.7708334922790527D), Telerik.Reporting.Drawing.Unit.Inch(0.30000004172325134D));
+            this.textBox14.Name = "textBox14";
+            this.textBox14.Size = new Telerik.Reporting.Drawing.SizeU(Telerik.Reporting.Drawing.Unit.Inch(2.0866143703460693D), Telerik.Reporting.Drawing.Unit.Inch(0.31863212585449219D));
+            this.textBox14.Style.Color = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(128)))));
+            this.textBox14.Style.Font.Size = Telerik.Reporting.Drawing.Unit.Point(15D);
+            this.textBox14.Style.TextAlign = Telerik.Reporting.Drawing.HorizontalAlign.Right;
+            this.textBox14.Value = "= Parameters.TDate.Value";
+            // 
+            // textBox13
+            // 
+            this.textBox13.Format = "{0:dd/MM/yyyy}";
+            this.textBox13.Location = new Telerik.Reporting.Drawing.PointU(Telerik.Reporting.Drawing.Unit.Inch(3.6666667461395264D), Telerik.Reporting.Drawing.Unit.Inch(0.30000004172325134D));
+            this.textBox13.Name = "textBox13";
+            this.textBox13.Size = new Telerik.Reporting.Drawing.SizeU(Telerik.Reporting.Drawing.Unit.Inch(2.0866143703460693D), Telerik.Reporting.Drawing.Unit.Inch(0.31863212585449219D));
+            this.textBox13.Style.Color = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(128)))));
+            this.textBox13.Style.Font.Size = Telerik.Reporting.Drawing.Unit.Point(15D);
+            this.textBox13.Style.TextAlign = Telerik.Reporting.Drawing.HorizontalAlign.Right;
+            this.textBox13.Value = "= Parameters.FDate.Value";
+            // 
+            // textBox17
+            // 
+            this.textBox17.Format = "{0:dd/MM/yyyy}";
+            this.textBox17.Location = new Telerik.Reporting.Drawing.PointU(Telerik.Reporting.Drawing.Unit.Inch(0.010416666977107525D), Telerik.Reporting.Drawing.Unit.Inch(0.30000004172325134D));
+            this.textBox17.Name = "textBox17";
+            this.textBox17.Size = new Telerik.Reporting.Drawing.SizeU(Telerik.Reporting.Drawing.Unit.Inch(3.4000003337860107D), Telerik.Reporting.Drawing.Unit.Inch(0.31863212585449219D));
+            this.textBox17.Style.Color = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(128)))));
+            this.textBox17.Style.Font.Size = Telerik.Reporting.Drawing.Unit.Point(15D);
+            this.textBox17.Style.TextAlign = Telerik.Reporting.Drawing.HorizontalAlign.Left;
+            this.textBox17.Value = "= Fields.companyname";
             // 
             // detail
             // 
@@ -230,14 +269,6 @@ namespace AriCliReport
             new Telerik.Reporting.SqlDataSourceParameter("@PSource", System.Data.DbType.Int32, "=Parameters.PSource.Value")});
             this.sqlPatientSource.SelectCommand = resources.GetString("sqlPatientSource.SelectCommand");
             // 
-            // source
-            // 
-            this.source.GroupFooter = this.groupFooterSection1;
-            this.source.GroupHeader = this.groupHeaderSection1;
-            this.source.Groupings.AddRange(new Telerik.Reporting.Grouping[] {
-            new Telerik.Reporting.Grouping("=Fields.source")});
-            this.source.Name = "source";
-            // 
             // groupFooterSection1
             // 
             this.groupFooterSection1.Height = Telerik.Reporting.Drawing.Unit.Inch(0.15748023986816406D);
@@ -298,61 +329,24 @@ namespace AriCliReport
             this.textBox7.Style.Color = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(128)))));
             this.textBox7.Value = "Procedencia";
             // 
-            // sqlSources
-            // 
-            this.sqlSources.ConnectionString = "AriClinicContext";
-            this.sqlSources.Name = "sqlSources";
-            this.sqlSources.SelectCommand = "SELECT        source_id, nme\r\nFROM            source";
-            // 
-            // textBox14
-            // 
-            this.textBox14.Format = "{0:dd/MM/yyyy}";
-            this.textBox14.Location = new Telerik.Reporting.Drawing.PointU(Telerik.Reporting.Drawing.Unit.Inch(5.7708334922790527D), Telerik.Reporting.Drawing.Unit.Inch(0.30000004172325134D));
-            this.textBox14.Name = "textBox14";
-            this.textBox14.Size = new Telerik.Reporting.Drawing.SizeU(Telerik.Reporting.Drawing.Unit.Inch(2.0866143703460693D), Telerik.Reporting.Drawing.Unit.Inch(0.31863212585449219D));
-            this.textBox14.Style.Color = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(128)))));
-            this.textBox14.Style.Font.Size = Telerik.Reporting.Drawing.Unit.Point(15D);
-            this.textBox14.Style.TextAlign = Telerik.Reporting.Drawing.HorizontalAlign.Right;
-            this.textBox14.Value = "= Parameters.TDate.Value";
-            // 
-            // textBox13
-            // 
-            this.textBox13.Format = "{0:dd/MM/yyyy}";
-            this.textBox13.Location = new Telerik.Reporting.Drawing.PointU(Telerik.Reporting.Drawing.Unit.Inch(3.6666667461395264D), Telerik.Reporting.Drawing.Unit.Inch(0.30000004172325134D));
-            this.textBox13.Name = "textBox13";
-            this.textBox13.Size = new Telerik.Reporting.Drawing.SizeU(Telerik.Reporting.Drawing.Unit.Inch(2.0866143703460693D), Telerik.Reporting.Drawing.Unit.Inch(0.31863212585449219D));
-            this.textBox13.Style.Color = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(128)))));
-            this.textBox13.Style.Font.Size = Telerik.Reporting.Drawing.Unit.Point(15D);
-            this.textBox13.Style.TextAlign = Telerik.Reporting.Drawing.HorizontalAlign.Right;
-            this.textBox13.Value = "= Parameters.FDate.Value";
-            // 
-            // textBox17
-            // 
-            this.textBox17.Format = "{0:dd/MM/yyyy}";
-            this.textBox17.Location = new Telerik.Reporting.Drawing.PointU(Telerik.Reporting.Drawing.Unit.Inch(0.010416666977107525D), Telerik.Reporting.Drawing.Unit.Inch(0.30000004172325134D));
-            this.textBox17.Name = "textBox17";
-            this.textBox17.Size = new Telerik.Reporting.Drawing.SizeU(Telerik.Reporting.Drawing.Unit.Inch(3.4000003337860107D), Telerik.Reporting.Drawing.Unit.Inch(0.31863212585449219D));
-            this.textBox17.Style.Color = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(128)))));
-            this.textBox17.Style.Font.Size = Telerik.Reporting.Drawing.Unit.Point(15D);
-            this.textBox17.Style.TextAlign = Telerik.Reporting.Drawing.HorizontalAlign.Left;
-            this.textBox17.Value = "= Fields.companyname";
-            // 
             // RptPatientBySource
             // 
             this.DataSource = this.sqlPatientSource;
+            group1.GroupFooter = this.groupFooterSection1;
+            group1.GroupHeader = this.groupHeaderSection1;
+            group1.Groupings.Add(new Telerik.Reporting.Grouping("=Fields.source"));
+            group1.Name = "source";
             this.Groups.AddRange(new Telerik.Reporting.Group[] {
-            this.source});
+            group1});
             this.Items.AddRange(new Telerik.Reporting.ReportItemBase[] {
             this.groupHeaderSection1,
             this.groupFooterSection1,
             this.pageHeaderSection1,
             this.detail,
             this.pageFooterSection1});
+            this.Name = "RptPatientBySource";
             this.PageSettings.Landscape = false;
-            this.PageSettings.Margins.Bottom = Telerik.Reporting.Drawing.Unit.Mm(5D);
-            this.PageSettings.Margins.Left = Telerik.Reporting.Drawing.Unit.Mm(5D);
-            this.PageSettings.Margins.Right = Telerik.Reporting.Drawing.Unit.Mm(5D);
-            this.PageSettings.Margins.Top = Telerik.Reporting.Drawing.Unit.Mm(5D);
+            this.PageSettings.Margins = new Telerik.Reporting.Drawing.MarginsU(Telerik.Reporting.Drawing.Unit.Mm(5D), Telerik.Reporting.Drawing.Unit.Mm(5D), Telerik.Reporting.Drawing.Unit.Mm(5D), Telerik.Reporting.Drawing.Unit.Mm(5D));
             this.PageSettings.PaperKind = System.Drawing.Printing.PaperKind.A4;
             reportParameter1.Name = "FDate";
             reportParameter1.Text = "Desde fecha";
